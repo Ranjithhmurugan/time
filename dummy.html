@@ -1,0 +1,89 @@
+<script>
+    function displayData() {
+        const task = localStorage.getItem('task');
+        const stime = localStorage.getItem('start-time');
+        const etime = localStorage.getItem('end-time');
+
+        if (task) {
+            document.getElementById('t1').textContent = task; 
+            console.log(task)
+        }
+        if (stime) {
+            document.getElementById('s1').textContent = stime;
+            console.log(stime)
+        }
+
+        if (etime) {
+            
+            document.getElementById('e1').textContent += '-' + etime;
+            console.log(etime) 
+        }
+       
+
+    }
+
+    window.onload = function() {
+        displayData();
+    }
+    function del()
+    {
+        localStorage.clear();
+        displayData();
+    }
+</script>
+
+
+function displayData() {
+    const task = localStorage.getItem('task');
+    const stime = localStorage.getItem('start-time');
+    const etime = localStorage.getItem('end-time');
+
+    if (task) {
+        document.getElementById('t1').textContent = task; 
+        console.log(task)
+    }
+    if (stime) {
+        document.getElementById('s1').textContent = stime;
+        console.log(stime)
+    }
+
+    if (etime) {
+        
+        document.getElementById('e1').textContent= etime;
+        console.log(etime) 
+    }
+   
+
+}
+
+
+
+function row()
+    {
+        var table=document.getElementById("sch");
+        var task=document.getElementById("task");
+        var stime=document.getElementById("start-time");
+        var etime=document.getElementById("end-time");
+
+        console.log(task)
+        console.log(stime)
+        console.log(etime)
+
+        if(task && stime && etime){
+            var newRow=table.insertRow();
+            var c1=newRow.insertCell(0);
+            var c2=newRow.insertCell(1);
+            var c3=newRow.insertCell(2);
+
+            c1.innerHTML=task;
+            c2.innerHTML=stime;
+            c3.innerHTML=etime;
+
+        document.getElementById("task").value = "";
+        document.getElementById("stime").value = "";
+        document.getElementById("etime").value = "";
+        }
+        else{
+            alert("please fill all the input")
+        }
+    }

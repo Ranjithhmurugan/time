@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <link rel="stylesheet" href="monday.css">
+</head>
+<body>
+    <h1>MONDAY</h1>
+    <div class="b" id="add">
+          <button id="mon" class="mon"><h2>  &nbsp; &nbsp; &nbsp;&nbsp; ADD TASK</h2>
+          <img src="./assets/plus.png" alt="+" id="plus">
+        </button>
+        </div>
+    <div class="set" id="set">
+        <div class="task">
+        <label for="taskname">TASK NAME</label>
+        <input type="text" id="task"placeholder="task...">
+    </div>
+    <br>
+    <br>
+    <div class="time">
+        <label for="stime">STRATING TIME</label>
+        <input type="time" id="start-time">
+        <br><br><br>
+        <label for="etime">END TIME</label>
+        <input type="time" id="end-time">
+        <br> <br> <br>
+        <button type="button" 
+        id="saveadd" onclick="forming()">SAVE & ADD</button>
+        <button type="button" id="savexit">SAVE & EXIT</button>
+        <!-- onwindow.location.href='tt.html' -->
+
+    </div>
+    <script>
+        const mon = document.getElementById('mon');
+        const set = document.getElementById('set');
+
+        mon.addEventListener('click', function() {
+            if (set.style.display === 'none' ) {
+                set.style.display = 'block';
+            } else {
+                set.style.display = 'none';
+            }
+        });
+        function forming(){
+            const task=document.getElementById('task').value;
+            const stime=document.getElementById('start-time').value;
+            const etime=document.getElementById('end-time').value;
+            localStorage.setItem('task', task);
+            localStorage.setItem('start-time', stime.toString());
+            localStorage.setItem('end-time', etime.toString());
+            alert('Data saved in local storage!');
+            console.log(task)
+            console.log(stime)
+            console.log(etime)
+            document.getElementById('task').value = '';
+            document.getElementById('start-time').value = '';
+            document.getElementById('end-time').value = '';
+        }
+    </script>
+</body>
+</html>

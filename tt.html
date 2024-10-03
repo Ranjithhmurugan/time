@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: rgb(221, 238, 192);
+    }
+.header{
+    background-color: rgb(113, 226, 113);
+    width: 100vw;
+    height: 5vh;
+    border-radius: 10vw;
+}
+#line{
+    padding: 1vh;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.5vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+table,th,tr{
+    width: 90vw;
+    /* border: 1px solid black; */
+    margin: 3vw 3vh;
+    border-collapse: collapse;
+}
+th,tr{
+    height: 5vh;
+}
+td{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: rgb(200, 219, 219);
+}
+</style>
+<body>
+    <div class="header">
+    <p id="line">Let's Make Every Minute Count</p>
+    </div>
+
+    <div class="box">
+        <table id="sch">
+            <tr style="background-color: rgb(212, 135, 135);">
+                <th>Task Name</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Duration</th>
+            </tr>
+ 
+           <tr>
+            <td id="t1"></td>
+            <td id="s1"></td>
+            <td id="e1"></td>
+            <td id="d1"></td>
+           </tr>           
+        </table>
+    </div>
+</body>
+<script>
+    function displayData() {
+        const task = localStorage.getItem('task');
+        const stime = localStorage.getItem('start-time');
+        const etime = localStorage.getItem('end-time');
+
+        if (task) {
+            document.getElementById('t1').textContent = task; 
+            console.log(task)
+        }
+        if (stime) {
+            document.getElementById('s1').textContent = stime;
+            console.log(stime)
+        }
+
+        if (etime) {
+            
+            document.getElementById('e1').textContent= etime;
+            console.log(etime) 
+        }
+        if(stime && etime){
+            document.getElementById('s1,e1').textContent=(etime-stime)/(1000*60);
+            console.log()
+        }
+       
+
+    }
+
+    window.onload = function() {
+        displayData();
+    }
+    
+</script>
+</html>

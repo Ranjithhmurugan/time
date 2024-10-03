@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+    <div class="nav" style="background-color: rgb(117, 219, 117);">
+       <a href="#"><h2 style="height: 7px;" id="greet"></h2></a>
+       <div class="snavv">
+       <a href="#" class="h">Home</a>
+       <div class="drop">
+       <a href="#" class="h">Theme</a>
+       <div class="opt">
+        <a href="#" id="dark">Dark</a>
+        <a href="#" id="light">Light</a>
+       </div>
+    </div>
+       <a href="time.html" class="h">Calendar</a>
+    </div>
+       <!-- <input type="text" placeholder="Search..." id="search"> -->
+       <div class="in">
+       <a href="signup.html" class="btn">SIGN-IN</a>
+       &nbsp;&nbsp;&nbsp;
+       <a href="login.html" class="btn2">LOG-IN</a>
+     </div>
+ </div>
+ <!-- <div class="quote">
+    <p style="padding: 0.5vw;" id="vk">"There is a one percent chance, and sometimes that chance is good enough. But what matters is what you think about that one percent"</p>
+       <h3> -Virat Kohli </h3>
+ </div> -->
+
+ <div class="mid">
+   
+    <div class="topic">
+         <div class="c">
+            <div class="create">
+                <a href="#"><img src="./assets/plus.png" id="cr" alt=""></a>
+                  <a href="schedule.html" id="cs"> <h2> CREATE SCHEDULE</h2></a>
+            </div>
+            <div class="view">
+                <a href="#"><img src="./assets/cal.png" alt="" id="cr"></a>
+                  <a href="tt.html"> <h2> VIEW SCHEDULE</h2></a>
+            </div>
+         </div>
+         <div class="t">
+            <div class="today">
+                <a href="#"><img src="./assets/target.png" alt="" id="cr"></a>
+                      <a href="#"> <h2>TODAY SPECIAL</h2></a>
+             </div>
+         <div class="progress">
+            <a href="#"><img src="./assets/tick.png" alt="" id="cr"></a>
+                  <a href="progress.html"> <h2> PROGRESS</h2></a>
+         </div>
+        </div>
+    </div>    
+    <div class="filler"></div>
+ </div>
+
+</body>
+<script>
+   function greets(){
+      const now=new Date();
+      const hour=now.hours();
+
+      if(hour<12)
+      {
+         document.getElementById('greet').textContent= 'Hii Good Morning !';
+      }
+     else if(hour<15)
+     {
+      document.getElementById('greet').textContent= 'Hii Good afternoon !';
+     }
+     else
+     {
+      document.getElementById('greet').textContent= 'Hii Good Evening !';
+     }
+     }
+
+     window.onload=function(){
+      greets();
+     }
+   
+</script>
+</html>

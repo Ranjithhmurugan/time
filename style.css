@@ -1,0 +1,211 @@
+*{
+       text-decoration: none;
+}
+
+.nav{
+    display: flex; 
+    /* border-radius: 9px; */
+    justify-content: space-evenly;
+    height: 8vh;
+    /* border: 1px solid black; */
+}
+.h{
+    padding-top: 0.7vw;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-weight: 300;
+   color: black;
+}
+.drop{
+    /* padding-top: 0.7vw; */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-weight: 300;
+   color: black;
+   position: relative;
+   display: block;
+}
+.drop a{
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+}
+.opt{
+    background-color: white;
+    display: none;
+    position: absolute;
+    min-width: 160px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;   
+}
+.opt a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.opt:hover{
+    background-color: rgb(255, 254, 254);
+}
+.drop:hover .opt{
+    display: block;
+}
+#dark:hover{
+    background-color: rgb(202, 204, 201);
+}
+#light:hover{
+    background-color: rgb(204, 201, 201);    
+}
+.snavv{
+    width: 30%;
+    padding-left: 39vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+.btn{
+    width: 7vw;
+    height: 5vh;
+    background-color: rgb(228, 46, 46);
+    color: rgb(255, 255, 255);
+     border-radius: 10px;
+     padding: 10px 12px;
+     border: none;
+     font-weight: 900;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-size: 12px;
+
+}
+.btn2{
+     width: 7vw;
+    height: 5vh;
+    background-color: rgb(228, 46, 46);
+    color: rgb(255, 255, 255);
+     border-radius: 10px;
+     padding: 10px 12px;
+     border: none;
+     font-weight: 900;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-size: 12px;
+}
+#image{
+    width: 3vw;
+    height: 6vh;
+}
+#search{
+    width: 15vw;
+    height: 4vh;
+    border-radius: 4px;
+    /* margin-left: 38vw;*/
+    margin-top: 6.3px;
+}
+.nnav{
+    display: flex;  
+}
+.in{
+    
+    padding-top: 15px;
+   
+    /* justify-content: space-evenly; */
+}
+a:hover{
+    color: firebrick;
+}
+.mid{
+    display: flex;
+    background-color: rgb(221, 238, 192);
+    /* width: 100vw; */
+    width: 77vw;
+    height: 100vh;
+    transition: transform 0.5s;
+}
+.quote{
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    word-spacing: 5px;
+    background-color: rgb(180, 185, 185);
+}
+#vk{
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1.5vw;
+}
+li{
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+.home{
+    background-color: rgb(175, 175, 175);   
+    height: 100vh;
+    padding-bottom: 4vh;
+    border-radius: 5px;
+    /* box-shadow: 0 20px 35px rgba(245, 24, 24, 0.1); */
+}
+.c{
+    display: flex;
+}
+.t{
+    display: flex;
+}
+
+.create{
+    margin: 10vw;
+    background-color: rgb(206, 178, 119);
+    width: 20vw;
+    height: 12vh;
+    border-radius: 8px;
+    display: flex;
+    border: 1px solid rgb(223, 221, 221);
+    box-shadow: 0 20px 35px rgba(192, 76, 76, 0.1);
+
+}
+
+.view{
+    margin: 10vw;
+    background-color: rgb(206, 178, 119);
+    width: 20vw;
+    height: 12vh;
+    border-radius: 8px;
+    display: flex;
+    border: 1px solid rgb(223, 208, 208);
+
+}
+.edit{
+    margin-left: 10vw;
+    background-color: rgb(206, 178, 119);
+    width: 20vw;
+    height: 12vh;
+    border-radius: 8px;
+    display: flex;
+    border: 1px solid rgb(223, 217, 217);
+}
+.progress{
+    margin-left: 20vw;
+    background-color: rgb(206, 178, 119);
+    width: 20vw;
+    height: 12vh;
+    border-radius: 8px;
+    display: flex;
+    border: 1px solid rgb(226, 223, 223);
+}
+.today{
+    margin-left: 10vw;
+    background-color: rgb(206, 178, 119);
+    width: 20vw;
+    height: 12vh;
+    border-radius: 8px;
+    display: flex;
+    border: 1px solid rgb(223, 219, 219);
+}
+#cr{
+    padding-top: 3vh;
+    width: 4vw;
+    height: 8vh;
+}
+h2{
+    font-size: 1.6vw;
+    margin: 2vw 1vh;
+}
+#cs{
+    justify-content: center;
+    text-align:start;
+    margin-top: -1.7vh;
+}

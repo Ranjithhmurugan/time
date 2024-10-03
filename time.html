@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <style>
+        .calendar {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .calendar-header h2 {
+            margin: 0;
+        }
+        .calendar-header button {
+            background-color: rgb(117, 219, 117);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td {
+            height: 50px;
+            vertical-align: middle;
+        }
+        td:hover {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body style="background-color:rgb(221, 238, 192);">
+<br>
+<br>
+<br>
+<div class="calendar" >
+    <div class="calendar-header">
+        <button onclick="prevMonth()">Previous</button>
+        <h2 id="monthYear"></h2>
+        <button onclick="nextMonth()">Next</button>
+    </div>
+    <table id="calendarTable">
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody id="calendarBody">
+            <!-- Calendar dates will be generated here by JavaScript -->
+        </tbody>
+    </table>
+    <script>
+
+    let currentMonth = new Date().getMonth();
+    let currentYear = new Date().getFullYear();
+
+    function generateCalendar(month, year) {
+        const calendarBody = document.getElementById('calendarBody');
+        calendarBody.innerHTML = '';
+
+        const firstDay = new Date(year, month).getDay();
+        const daysInMonth = 32 - new Date(year, month, 32).getDate();
+        const monthYearDisplay = document.getElementById('monthYear');
+
+        monthYearDisplay.innerHTML = new Date(year, month).toLocaleString('default', { month: 'long', year: 'numeric' });
+
+        let date = 1;
+        for (let i = 0; i < 6; i++) {
+            const row = document.createElement('tr');
+
+            for (let j = 0; j < 7; j++) {
+                if (i === 0 && j < firstDay) {
+                    const cell = document.createElement('td');
+                    const cellText = document.createTextNode('');
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+                } else if (date > daysInMonth) {
+                    break;
+                } else {
+                    const cell = document.createElement('td');
+                    const cellText = document.createTextNode(date);
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+                    date++;
+                }
+            }
+
+            calendarBody.appendChild(row);
+        }
+    }
+
+    function prevMonth() {
+        currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+        currentYear = (currentMonth === 11) ? currentYear - 1 : currentYear;
+        generateCalendar(currentMonth, currentYear);
+    }
+
+    function nextMonth() {
+        currentMonth = (currentMonth === 11) ? 0 : currentMonth + 1;
+        currentYear = (currentMonth === 0) ? currentYear + 1 : currentYear;
+        generateCalendar(currentMonth, currentYear);
+    }
+
+    window.onload = function() {
+        generateCalendar(currentMonth, currentYear);
+    };
+</script>
+
+</body>
+</html>
